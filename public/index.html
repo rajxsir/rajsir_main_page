@@ -1099,9 +1099,21 @@
             <li class="blog-post-item">
               <a href="#">
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
+                .avatar-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%; /* Makes the image look circular if desired */
+  overflow: hidden; /* Ensures no overflow if used with rounded corners */
+}
+
+.avatar-box img {
+  max-width: 100%; /* Ensure image scales properly */
+  height: auto;
+  border-radius: 50%; /* Circular avatar */
+}
+
 
                 <div class="blog-content">
 
