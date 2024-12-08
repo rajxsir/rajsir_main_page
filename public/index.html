@@ -1,272 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acharya Private Tuition</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Acharya Private Tutor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+        /* Global Styles */
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-sizing: border-box;
         }
 
- .google-business-button {
-        display: inline-block;
-        background-color: #4285F4; /* Google blue */
-        color: white;
-        padding: 10px 20px;
-        font-size: 16px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-    }
-    .google-business-button:hover {
-        background-color: #357AE8; /* Darker Google blue */
-    }
-
-        
-        .navbar {
-            background-color: #00796b;
-            padding: 10px;
-            text-align: center;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar a {
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
             color: white;
-            text-decoration: none;
-            padding: 15px;
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block;
-            transition: background 0.3s, transform 0.3s;
+            overflow-x: hidden;
+            transition: all 0.5s ease;
         }
 
-        .navbar a:hover {
-            background-color: #004d40;
-            transform: translateY(-2px);
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .container {
-            padding: 20px;
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        h1, h2 {
-            color: #00796b;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .section {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .subjects {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .subjects a {
-            text-decoration: none;
+        a {
             color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 15px;
-            width: 80%;
-            max-width: 300px;
-            background: linear-gradient(135deg, #4CAF50, #81C784);
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-
-        .subjects a:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .chapters {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .chapters a {
             text-decoration: none;
-            color: #004d40;
-            background: #E0F2F1;
-            font-size: 16px;
-            padding: 10px;
-            width: 80%;
-            max-width: 250px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            transition: color 0.3s ease;
         }
 
-        .chapters a:hover {
-            background-color: #B2DFDB;
+        a:hover {
+            color: #f39c12;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #1a2a3a, #2d3e50);
+            background-image: url('https://drive.google.com/file/d/1rXi9jntEBfDwQX9e4ZYW_lucYO4BwRUP/view?usp=sharing');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        header .content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #f39c12;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        header h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        header .cta-button {
+            padding: 12px 30px;
+            font-size: 1.3rem;
+            background: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header .cta-button:hover {
+            transform: translateY(-5px);
+            background: #f1c40f;
+        }
+
+        /* Subjects Section */
+        .subjects {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .subjects h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #f39c12;
+        }
+
+        .subjects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .subject-card {
+            flex: 1 1 calc(25% - 20px);
+            background: #2d3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card:hover {
             transform: scale(1.05);
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
+        .subject-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, #f39c12, #f1c40f);
+            opacity: 0.15;
+            transition: opacity 0.4s ease;
+        }
+
+        .subject-card:hover::after {
+            opacity: 0.3;
+        }
+
+        .subject-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #f1c40f;
+        }
+
+        .subject-description {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .chapter-box {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .chapter-box a {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f39c12;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .chapter-box a:hover {
+            background: #f1c40f;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a2a3a;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+        }
+
+        footer a {
+            color: #f39c12;
+        }
+
+        /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            .navbar a {
-                font-size: 16px;
-                padding: 10px;
+            from {
+                opacity: 0;
+                transform: translateY(50px);
             }
-
-            .container {
-                padding: 15px;
-            }
-
-            .subjects a, .chapters a {
-                font-size: 16px;
-                padding: 12px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* JavaScript fade-in display style for sections */
-        .show {
-            display: block !important;
-            opacity: 1 !important;
-            transform: translateY(0);
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .subject-card {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .subject-card {
+                flex: 1 1 100%;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(section => section.classList.remove('show'));
-            document.getElementById(sectionId).classList.add('show');
-            document.querySelectorAll('.chapters').forEach(chapter => chapter.style.display = 'none'); // Hide all chapters
-        }
-
-        function showChapters(subjectId) {
-            document.querySelectorAll('.chapters').forEach(chapter => chapter.style.display = 'none'); // Hide other chapters
-            document.getElementById(subjectId).style.display = 'flex'; // Show selected subject's chapters
-        }
-    </script>
 </head>
+
 <body>
 
-    <div class="navbar">
-        <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
-        <a href="javascript:void(0);" onclick="showSection('notes')">Notes</a>
-        <a href="javascript:void(0);" onclick="showSection('online-test')">Online Test</a>
-        <a href="javascript:void(0);" onclick="showSection('question-paper')">Question Paper</a>
-        <a href="javascript:void(0);" onclick="showSection('review')">Review</a>
-        <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
-    </div>
-
-    <div class="container">
-        <!-- Home Section -->
-        <div id="home" class="section show">
-            <h1>Acharya Private Tuition</h1>
-            <p>Welcome to Acharya Private Tuition! Discover resources for History, Civics, Geography, and Biology.</p>
+    <!-- Header Section -->
+    <header>
+        <div class="content">
+            <h1>Acharya Private Tutor</h1>
+            <h3>Raj Sir</h3>
+            <p>Your journey to academic excellence begins here.</p>
+            <button class="cta-button" onclick="openSubjects()">Explore Subjects</button>
         </div>
+    </header>
 
-        <!-- Notes Section -->
-        <div id="notes" class="section">
-            <h2>Notes</h2>
-            <div class="subjects">
-                <a href="javascript:void(0);" onclick="showChapters('history-chapters')">History</a>
-                <a href="javascript:void(0);" onclick="showChapters('civics-chapters')">Civics</a>
-                <a href="javascript:void(0);" onclick="showChapters('geography-chapters')">Geography</a>
-                <a href="javascript:void(0);" onclick="showChapters('biology-chapters')">Biology</a>
+    <!-- Subjects Section -->
+    <section class="subjects" id="subjects">
+        <h2>Our Subjects</h2>
+        <div class="subjects-grid">
+            <div class="subject-card" onclick="toggleChapters(this)">
+                <div class="subject-title">History</div>
+                <div class="subject-description">Dive into ancient and modern history.</div>
+                <div class="chapter-box">
+                    <a href="#">Chapter 1: Ancient Civilizations</a>
+                    <a href="#">Chapter 2: Modern History</a>
+                </div>
+            </div>
+
+            <div class="subject-card" onclick="toggleChapters(this)">
+                <div class="subject-title">Civics</div>
+                <div class="subject-description">Understand governance and democracy.</div>
+                <div class="chapter-box">
+                    <a href="#">Chapter 1: Democracy</a>
+                    <a href="#">Chapter 2: Citizenship</a>
+                </div>
+            </div>
+
+            <div class="subject-card" onclick="toggleChapters(this)">
+                <div class="subject-title">Geography</div>
+                <div class="subject-description">Explore the world’s landscapes.</div>
+                <div class="chapter-box">
+                    <a href="#">Chapter 1: Earth Structure</a>
+                    <a href="#">Chapter 2: Landforms</a>
+                </div>
+            </div>
+
+            <div class="subject-card" onclick="toggleChapters(this)">
+                <div class="subject-title">English Literature</div>
+                <div class="subject-description">Uncover poetry and stories.</div>
+                <div class="chapter-box">
+                    <a href="#">Chapter 1: The Road Not Taken</a>
+                    <a href="#">Chapter 2: The Solitary Reaper</a>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Online Test Section -->
-        <div id="online-test" class="section">
-            <h2>Online Test</h2>
-            <div class="subjects">
-                <a href="javascript:void(0);" onclick="showChapters('history-chapters')">History</a>
-                <a href="javascript:void(0);" onclick="showChapters('civics-chapters')">Civics</a>
-                <a href="javascript:void(0);" onclick="showChapters('geography-chapters')">Geography</a>
-                <a href="javascript:void(0);" onclick="showChapters('biology-chapters')">Biology</a>
-            </div>
-        </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Acharya Private Tutor. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:info@acharyatuition.com">info@acharyatuition.com</a></p>
+    </footer>
 
-        <!-- Question Paper Section -->
-        <div id="question-paper" class="section">
-            <h2>Question Paper</h2>
-            <div class="subjects">
-                <a href="javascript:void(0);" onclick="showChapters('history-chapters')">History</a>
-                <a href="javascript:void(0);" onclick="showChapters('civics-chapters')">Civics</a>
-                <a href="javascript:void(0);" onclick="showChapters('geography-chapters')">Geography</a>
-                <a href="javascript:void(0);" onclick="showChapters('biology-chapters')">Biology</a>
-            </div>
-        </div>
+    <script>
+        function openSubjects() {
+            document.getElementById('subjects').scrollIntoView({ behavior: 'smooth' });
+        }
 
-        <!-- Chapter Lists for each Subject -->
-        <div id="history-chapters" class="chapters">
-            <h2>History - Chapters</h2>
-            <a href="https://drive.google.com/file/d/1PyQ0M3Km-uGbLGCsX20dmEzr-tlN1S-Z/preview" target="_blank"> The First World War </a>
-            <a href="https://drive.google.com/file/d/1wJfztteeRQKjL0aY5WZEGVR0IUxQQguJ/preview" target="_blank"> The Second World War</a>
-            <a href="https://drive.google.com/file/d/1Jw0FP9VrCShMKgwkroZR_ok7qmTuaqXn/preview" target="_blank"> First Phase of the Indian National Movement</a>
-            <a href="https://drive.google.com/file/d/1rhtCuLUrVmRtaiS1MbwFTzmeRVIr1cQl/preview" target="_blank"> Second Phase of the Indian National Movement</a>
-        </div>
+        function toggleChapters(element) {
+            const chapterBox = element.querySelector('.chapter-box');
+            chapterBox.style.display = chapterBox.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 
-        <div id="civics-chapters" class="chapters">
-            <h2>Civics - Chapters</h2>
-            <a href="path/to/civics-chapter1.pdf" target="_blank">Chapter 1</a>
-            <a href="path/to/civics-chapter2.pdf" target="_blank">Chapter 2</a>
-        </div>
-
-        <div id="geography-chapters" class="chapters">
-            <h2>Geography - Chapters</h2>
-            <a href="path/to/geography-chapter1.pdf" target="_blank">Chapter 1</a>
-            <a href="path/to/geography-chapter2.pdf" target="_blank">Chapter 2</a>
-        </div>
-
-        <div id="biology-chapters" class="chapters">
-            <h2>Biology - Chapters</h2>
-            <a href="path/to/biology-chapter1.pdf" target="_blank">Chapter 1</a>
-            <a href="path/to/biology-chapter2.pdf" target="_blank">Chapter 2</a>
-        </div>
-
-        <!-- Review Section -->
-        <div id="review" class="section">
-            <h2>Review</h2>
-            
-            <a href="https://g.page/r/CffLO5HQ6YimEBM/review" target="_blank" class="google-business-button">
-    Visit our Google Business Profile
-</a>
-     </div>
-
-        <!-- Contact Section -->
-        <div id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Email: rajuacharya00009@gmail.com</p>
-        </div>
-    </div>
 </body>
-</html>
 
+</html>
