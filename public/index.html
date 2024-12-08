@@ -1,310 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Acharya Private Tutor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
-        * {
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            background-image: url('https://drive.google.com/file/d/1sSC7y9wep7PQUUiKcTp13ornlo7_166s/preview'); /* Classroom image as background */
+            background-size: cover;
+            background-position: center;
             color: white;
-            overflow-x: hidden;
-            transition: all 0.5s ease;
+            height: 100%;
+            text-align: center;
+            position: relative;
         }
 
-        a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        /* Sun Animation */
+        .sun-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: sunrise 3s ease-out forwards; /* 3s animation, ends at final position */
+            z-index: -1; /* Keep it behind content */
         }
 
-        a:hover {
-            color: #f39c12;
+        @keyframes sunrise {
+            0% { top: 100px; opacity: 0; }
+            100% { top: 0px; opacity: 1; } /* Stops at the final position */
         }
 
         /* Header Section */
         header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to bottom, #1a2a3a, #2d3e50);
-            background-image: url('https://drive.google.com/file/d/1rXi9jntEBfDwQX9e4ZYW_lucYO4BwRUP/view?usp=sharing');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
+            margin: 50px 0;
             position: relative;
         }
 
-        header::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        header .content {
-            position: relative;
-            z-index: 2;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #f39c12;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-        }
-
-        header h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #f1c40f;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        header .cta-button {
-            padding: 12px 30px;
-            font-size: 1.3rem;
-            background: #f39c12;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            transition: transform 0.3s ease, background 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        header .cta-button:hover {
-            transform: translateY(-5px);
-            background: #f1c40f;
-        }
-
-        /* Subjects Section */
-        .subjects {
-            padding: 50px 10%;
-            text-align: center;
-        }
-
-        .subjects h2 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            color: #f39c12;
-        }
-
-        .subjects-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .subject-card {
-            flex: 1 1 calc(25% - 20px);
-            background: #2d3e50;
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            transition: transform 0.4s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .subject-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .subject-card::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom right, #f39c12, #f1c40f);
-            opacity: 0.15;
-            transition: opacity 0.4s ease;
-        }
-
-        .subject-card:hover::after {
-            opacity: 0.3;
-        }
-
-        .subject-title {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #f1c40f;
-        }
-
-        .subject-description {
-            font-size: 1.1rem;
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
             margin-bottom: 20px;
         }
 
-        .chapter-box {
-            display: none;
-            margin-top: 20px;
-            text-align: left;
+        /* Search Bar */
+        .search-bar {
+            margin-top: 30px;
         }
 
-        .chapter-box a {
-            display: block;
-            margin-bottom: 10px;
+        .search-bar input {
+            width: 300px;
             padding: 10px;
-            background: #f39c12;
-            color: white;
-            border-radius: 8px;
+            border-radius: 20px;
+            border: 2px solid #f39c12;
+            font-size: 1.2em;
             text-align: center;
         }
 
-        .chapter-box a:hover {
-            background: #f1c40f;
+        .search-bar input:focus {
+            border-color: #f39c12;
+            outline: none;
+        }
+
+        /* Raj Sir's Image Section */
+        .raj-sir {
+            position: absolute;
+            top: 0%; /* Adjusted to top of the page */
+            left: 5%; /* Adjusted to left of the page */
+            border-radius: 50%;
+            width: 100px; /* Smaller circular image */
+            height: 100px; /* Smaller circular image */
+            border: 4px solid #fff;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2; /* Ensure image is above background */
+            text-align: center; /* Ensure text is centered under the image */
+        }
+
+        .raj-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Raj Sir's Name with Typing Effect */
+        .raj-name {
+            position: absolute;
+            top: 110%; /* Below the image */
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Algerian', sans-serif;
+            font-size: 1.2em;
+            color: #fff;
+            margin-top: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #f39c12; /* Cursor effect */
+            width: 0; /* Start with width 0 for typing effect */
+            animation: typing 3s steps(10) 1s forwards, blink-caret 0.75s step-end infinite;
+        }
+
+        /* Typing animation */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 8em; /* Adjust this based on the text length */
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            z-index: 5;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #f39c12;
+            border-radius: 5px;
+        }
+
+        /* Subject and Chapters Section */
+        .subjects {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 150px;
+            padding: 20px;
+        }
+
+        .subject {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            width: 25%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .subject:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .subject h2 {
+            text-align: center;
+            font-size: 1.8em;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        .subject ul {
+            list-style: none;
+            padding: 0;
+            color: white;
+        }
+
+        .subject li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .subject a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #f39c12;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .subject a:hover {
+            background-color: #e67e22;
+        }
+
+        /* Chapter Content Section */
+        .chapter {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            width: 80%;
+            margin: 50px auto;
+            color: white;
+        }
+
+        .chapter h2 {
+            font-size: 2.5em;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        .chapter img {
+            width: 50%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .read-online-btn {
+            padding: 15px 30px;
+            background-color: #f39c12;
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-online-btn:hover {
+            background-color: #e67e22;
         }
 
         /* Footer */
         footer {
-            background: #1a2a3a;
-            color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
-        footer p {
-            font-size: 1.1rem;
-        }
-
-        footer a {
-            color: #f39c12;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .subject-card {
-                flex: 1 1 calc(50% - 20px);
-            }
-
-            header h1 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .subject-card {
-                flex: 1 1 100%;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
-            }
-        }
     </style>
 </head>
-
 <body>
 
     <!-- Header Section -->
     <header>
-        <div class="content">
+        <div class="title">
             <h1>Acharya Private Tutor</h1>
-            <h3>Raj Sir</h3>
-            <p>Your journey to academic excellence begins here.</p>
-            <button class="cta-button" onclick="openSubjects()">Explore Subjects</button>
+            <!-- Sun Animation -->
+            <div class="sun-effect">
+                <img src="https://drive.google.com/file/d/1sSC7y9wep7PQUUiKcTp13ornlo7_166s/preview" alt="Sun" id="sun">
+            </div>
         </div>
     </header>
 
-    <!-- Subjects Section -->
-    <section class="subjects" id="subjects">
-        <h2>Our Subjects</h2>
-        <div class="subjects-grid">
-            <div class="subject-card" onclick="toggleChapters(this)">
-                <div class="subject-title">History</div>
-                <div class="subject-description">Dive into ancient and modern history.</div>
-                <div class="chapter-box">
-                    <a href="#">Chapter 1: Ancient Civilizations</a>
-                    <a href="#">Chapter 2: Modern History</a>
-                </div>
-            </div>
+    <!-- Raj Sir's Image Section -->
+    <div class="raj-sir">
+        <img src="F:/download from google/WhatsApp Image 2024-11-30 at 8.28.31 AM (1).jpeg" alt="Raj Sir" class="raj-image">
+        <div class="raj-name">Raj Sir</div> <!-- Typing effect applied here -->
+    </div>
 
-            <div class="subject-card" onclick="toggleChapters(this)">
-                <div class="subject-title">Civics</div>
-                <div class="subject-description">Understand governance and democracy.</div>
-                <div class="chapter-box">
-                    <a href="#">Chapter 1: Democracy</a>
-                    <a href="#">Chapter 2: Citizenship</a>
-                </div>
-            </div>
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search Chapter..." id="search">
+    </div>
 
-            <div class="subject-card" onclick="toggleChapters(this)">
-                <div class="subject-title">Geography</div>
-                <div class="subject-description">Explore the world’s landscapes.</div>
-                <div class="chapter-box">
-                    <a href="#">Chapter 1: Earth Structure</a>
-                    <a href="#">Chapter 2: Landforms</a>
-                </div>
-            </div>
-
-            <div class="subject-card" onclick="toggleChapters(this)">
-                <div class="subject-title">English Literature</div>
-                <div class="subject-description">Uncover poetry and stories.</div>
-                <div class="chapter-box">
-                    <a href="#">Chapter 1: The Road Not Taken</a>
-                    <a href="#">Chapter 2: The Solitary Reaper</a>
-                </div>
-            </div>
+    <!-- Subjects and Chapters Section -->
+    <div class="subjects" style="margin-top: 150px;">
+        <div class="subject" id="geography">
+            <h2>Geography</h2>
+            <ul>
+                <li><a href="#geo-chapter1">Chapter 1: Introduction to Geography</a></li>
+                <!-- More chapters -->
+            </ul>
         </div>
-    </section>
+
+        <div class="subject" id="history">
+            <h2>History</h2>
+            <ul>
+                <li><a href="#history-chapter1">Chapter 1: Ancient Civilizations</a></li>
+                <!-- More chapters -->
+            </ul>
+        </div>
+
+        <div class="subject" id="civics">
+            <h2>Civics</h2>
+            <ul>
+                <li><a href="#civics-chapter1">Chapter 1: Introduction to Civics</a></li>
+                <!-- More chapters -->
+            </ul>
+        </div>
+
+        <div class="subject" id="english-literature">
+            <h2>English Literature</h2>
+            <ul>
+                <li><a href="#english-chapter1">Chapter 1: English Poetries</a></li>
+                <!-- More chapters -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chapter Content Section -->
+    <div class="chapter" id="history-chapter1">
+        <h2>Chapter 1: Ancient Civilizations</h2>
+        <img src="history-cover.jpg" alt="History Chapter 1 Cover">
+        <a href="online-read-history-chapter1.html" class="read-online-btn">Read Online</a>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Acharya Private Tutor. All Rights Reserved.</p>
-        <p>Contact: <a href="mailto:info@acharyatuition.com">info@acharyatuition.com</a></p>
+        <p>&copy; 2024 Acharya Private Tutor. All rights reserved.</p>
     </footer>
 
-    <script>
-        function openSubjects() {
-            document.getElementById('subjects').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function toggleChapters(element) {
-            const chapterBox = element.querySelector('.chapter-box');
-            chapterBox.style.display = chapterBox.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
-
 </body>
-
 </html>
