@@ -11,230 +11,140 @@
             margin: 0;
             padding: 0;
             height: 100%;
-           background-image: url ('https://i.postimg.cc/SKj1R5Yx/DALL-E-2024-12-17-07-50-26-An-educational-themed-image-with-the-text-Acharya-Private-Tutor-promi.webp');
-
+            background-image: url('https://i.postimg.cc/SKj1R5Yx/DALL-E-2024-12-17-07-50-26-An-educational-themed-image-with-the-text-Acharya-Private-Tutor-promi.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: #f1c40f;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
             display: flex;
             flex-direction: column;
             text-align: center;
             justify-content: flex-start;
-           line-height: 1.15;
-           -webkit-text-size-adjust: 100%;
-           -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
         }
 
         header {
-            position: relative;
-            padding: 0px;
-            background-color: #4b0036;
-            font-size: 0.50rem;
-            text-align: center;
-            color: #4A90E2;
-            text-transform: uppercase;
+            padding: 0;
             background: linear-gradient(90deg, #4A90E2, #50C878);
-            background-clip: text;
-           -webkit-background-clip: text;
             color: transparent;
-           animation: gradient-move 5s infinite linear;
-           transition: transform 0.3s ease, color 0.3s ease;
-           margin-top: 0px;
-            
-            
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin: 0;
+            animation: gradient-move 5s infinite linear;
+            -webkit-background-clip: text;
         }
 
-
-        
-   
         h1 {
-            font-size: 2.5em;
-            margin: 10px;
-            align: center; 
-            color:#ec8b0a;
-       }
-          
-h1 {
- font-size: 1.5rem;
-  font-weight: bold;
-  color: #f7dc6f;
-  opacity: 0;
-  transform: scale(0.5); /* Start with a smaller scale */
-  animation: zoomIn 3s ease-out forwards;
-}
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.5); /* Start from smaller size */
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1); /* End at normal size */
-  }
-}
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f7dc6f;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: zoomIn 3s ease-out forwards;
+        }
 
+        @keyframes zoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
+        /* Navigation Menu */
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
 
+        .menu a {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: orange;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
 
+        .menu a:hover {
+            background-color: rgba(243, 156, 18, 0.8);
+            color: #2c3e50;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
+        }
 
-     
-        
+        /* Responsive Menu Styling */
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
 
+            .menu a {
+                margin: 5px 0;
+                padding: 10px;
+            }
+        }
 
-
-
-
-/* Navigation Menu */
-
-.menu {
-    display: flex;
-    justify-content: left;
-    
-    
-    
-    
-    }
-
-/* Menu Link Styling */
-.menu a {
-    font-family: 'Playfair Display', 'Georgia', serif;
-     color: white;
-     background-size: cover; /* Ensures the image covers the entire background */
-     background-position: center; /* Centers the image */
-     background-repeat: no-repeat; /* Prevents the image from repeating */
-    text-decoration: none;
-    padding: 3px 7px;
-    font-size: 0.9em;
-    margin: 0 10px;
-    border-radius: 5px;
-    position: relative;
-    display: block;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    background-color: orange; /* Semi-transparent black for menu items */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    backdrop-filter: blur(5px); /* Apply blur effect to the background behind the menu items */
-    
-}
-
-/* Hover Effect for Menu Items */
-.menu a:hover {
-    background-color: rgba(243, 156, 18, 0.8); /* Transparent orange background on hover */
-    color: #2c3e50;
-    transform: scale(1.1); /* Slightly grow the item on hover */
-    text-shadow: 0 0 10px rgba(243, 156, 18, 0.8), 0 0 20px rgba(243, 156, 18, 0.8); /* Glowing effect on hover */
-}
-
-/* Hover Effect: Underline for Menu Items */
-.menu a:hover::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -5px;
-    height: 3px;
-    background-color: rgba(230, 126, 34, 0.8); /* Transparent underline effect */
-}
-
-/* Active menu state effect */
-.menu a:active {
-    background-color: rgba(230, 126, 34, 0.8); /* Active transparent background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Responsive Menu Styling */
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu a {
-        font-size: 1.5em;
-        padding: 12px 15px;
-        margin: 5px 0;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
-
-
-
-      /* Subject and Chapter Sections */
+        /* Subject and Chapter Sections */
         .subjects-container {
-            margin-top: 100px;
+            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .subject-card {
             background: rgba(0, 0, 0, 0.6);
             width: 190px;
-            margin: 55px;
+            margin: 15px;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             text-align: center;
-            transition: transform 0.3s;
             cursor: pointer;
+            transition: transform 0.3s;
         }
+
         .subject-card:hover {
             transform: scale(1.05);
         }
-        .subject-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+
+        .subject-card button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-       /* Add the hover effect to the Show Chapters button */
-.subject-card button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    border-radius: 35px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
+        .subject-card button:hover {
+            background-color: #e67e22;
+            transform: scale(1.1);
+        }
 
-.subject-card button:hover {
-    background-color: #e67e22;
-    transform: scale(1.1);
-}
-
-
-
-
-        /* Chapter Box */
         .chapter-box {
             display: none;
-            margin-top: 50px;
+            margin-top: 20px;
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .chapter-card {
             background: rgba(0, 0, 0, 0.6);
             width: 150px;
             margin: 15px;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             text-align: center;
             cursor: pointer;
         }
@@ -243,105 +153,88 @@ h1 {
             transform: scale(1.05);
         }
 
-        /* Contact Section */
-        .contact-container {
-            margin-top: 80px;
-            background: #1b2631;
-            padding: 30px;
-            border-radius: 10px;
-            width: 35%;
-            margin: auto;
-            text-align: left;
-            background: rgba(0, 0, 0, 0.6);
-            	
-        }
-        .contact-container h2 {
-            margin-bottom: 20px;
-            font-size: 1em;
-            
-        }
-        .contact-container p {
-            font-size: 0.90em;
+        /* PDF Container */
+        #pdfContainer {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .contact-container h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .contact-container p {
+            font-size: 0.9em;
+        }
+
+        /* Footer Section */
         footer {
             margin-top: auto;
             background-color: #2c3e50;
             padding: 5px;
-            margin: 35px;
             color: orange;
-            text-align: left;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius; 10px;
+            text-align: center;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .subjects-container {
-                flex-direction: column;
-                align-items: center;
-            }
+        footer p {
+            margin: 0;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <h1>Acharya Private Tutor</h1>
     </header>
 
-   
-
-
- <!-- Menu Section -->
+    <!-- Menu Section -->
     <div class="menu">
-    
-     
         <a href="#" onclick="showChapters('history')">History</a>
         <a href="#" onclick="showChapters('civics')">Civics</a>
         <a href="#" onclick="showChapters('geography')">Geography</a>
-        <a href="#contact" onclick="showContact()">Contact for Admission/Demo</a>
+        <a href="#contact">Contact</a>
     </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Subject and Chapter Sections -->
-    <div class="subjects-container" id="subjectsContainer">
-        <!-- Subject Cards will appear here -->
-    </div>
-
-    <!-- Chapter Section for History -->
-    <div class="chapter-box" id="historyChapters">
-        <!-- Chapters for History dynamically generated -->
-    </div>
-
-    <!-- Chapter Section for Civics -->
-    <div class="chapter-box" id="civicsChapters">
-        <!-- Chapters for Civics dynamically generated -->
-    </div>
-
-    <!-- Chapter Section for Geography -->
-    <div class="chapter-box" id="geographyChapters">
-        <!-- Chapters for Geography dynamically generated -->
-    </div>
+    <div class="subjects-container" id="subjectsContainer"></div>
+    <div class="chapter-box" id="historyChapters"></div>
+    <div class="chapter-box" id="civicsChapters"></div>
+    <div class="chapter-box" id="geographyChapters"></div>
+    <div id="pdfContainer"></div>
 
     <!-- Contact Section -->
     <div id="contact" class="contact-container">
         <h2>Contact for Admission/Demo Lecture</h2>
-        <p>Email: <a href="mailto:rajuacharya00009@gmail.com" style="color: #f39c12;">rajuacharya00009@gmail.com</a></p>
+        <p>Email: <a href="mailto:rajuacharya00009@gmail.com">rajuacharya00009@gmail.com</a></p>
         <p>Phone: +91 9076171508</p>
     </div>
 
@@ -350,102 +243,51 @@ h1 {
         <p>&copy; 2024 Acharya Private Tutor by Raj Sir. All Rights Reserved.</p>
     </footer>
 
-   <script>
-    // Subjects data with chapters and links to PDFs
-const subjects = {
-    history: [
-        { name: "The First War of Independence 1857", pdf: "history/history-chapter1.pdf" },
-        { name: "Chapter 2", pdf: "history/history-chapter2.pdf" },
-        { name: "Chapter 3", pdf: "history/history-chapter3.pdf" },
-        { name: "Chapter 4", pdf: "history/history-chapter4.pdf" },
-        { name: "Chapter 5", pdf: "history/history-chapter5.pdf" },
-    ],
-    civics: [
-        { name: "Chapter 1", pdf: "civics/civics-chapter1.pdf" },
-        { name: "Chapter 2", pdf: "civics/civics-chapter2.pdf" },
-        { name: "Chapter 3", pdf: "civics/civics-chapter3.pdf" },
-        { name: "Chapter 4", pdf: "civics/civics-chapter4.pdf" },
-        { name: "Chapter 5", pdf: "civics/civics-chapter5.pdf" },
-    ],
-    geography: [
-        { name: "Chapter 1", pdf: "geography/geography-chapter1.pdf" },
-        { name: "Chapter 2", pdf: "geography/geography-chapter2.pdf" },
-        { name: "Chapter 3", pdf: "geography/geography-chapter3.pdf" },
-        { name: "Chapter 4", pdf: "geography/geography-chapter4.pdf" },
-        { name: "Chapter 5", pdf: "geography/geography-chapter5.pdf" },
-    ],
-};
+    <script>
+        const subjects = {
+            history: [
+                { name: "The First War of Independence 1857", pdf: "history/history-chapter1.pdf" },
+                { name: "Chapter 2", pdf: "history/history-chapter2.pdf" }
+            ],
+            civics: [
+                { name: "Union Parliament", pdf: "civics/civics-chapter1.pdf" },
+                { name: "Chapter 2", pdf: "civics/civics-chapter2.pdf" }
+            ],
+            geography: [
+                { name: "Climate", pdf: "geography/geography-chapter1.pdf" },
+                { name: "Chapter 2", pdf: "geography/geography-chapter2.pdf" }
+            ]
+        };
 
-// Function to render chapter links for a specific subject
-function showChapters(subject) {
-    // Hide all chapter sections initially
-    document.querySelectorAll(".chapter-section").forEach(section => {
-        section.style.display = 'none';
-    });
+        function showChapters(subject) {
+            document.querySelectorAll(".chapter-box").forEach(box => box.style.display = "none");
+            const chapterBox = document.getElementById(`${subject}Chapters`);
+            chapterBox.style.display = "flex";
+            chapterBox.innerHTML = subjects[subject].map(chapter => `
+                <div class="chapter-card">
+                    <h3>${chapter.name}</h3>
+                    <button onclick="viewPdf('${chapter.pdf}')">Read PDF</button>
+                </div>
+            `).join("");
+        }
 
-    // Show the chapters for the selected subject
-    const chapterBox = document.getElementById(`${subject}Chapters`);
-    chapterBox.style.display = 'flex';
+        function viewPdf(pdfUrl) {
+            const pdfContainer = document.getElementById("pdfContainer");
+            pdfContainer.innerHTML = `<iframe src="${pdfUrl}"></iframe>`;
+            pdfContainer.scrollIntoView({ behavior: "smooth" });
+        }
 
-    // Dynamically generate chapter cards for the selected subject
-    chapterBox.innerHTML = ''; // Clear previous content
-
-    subjects[subject].forEach((chapter) => {
-        const chapterCard = document.createElement("div");
-        chapterCard.classList.add("chapter-card");
-        chapterCard.innerHTML = `
-            <h3>${chapter.name}</h3>
-            <button onclick="viewPdf('${chapter.pdf}')">Read PDF</button>
-        `;
-        chapterBox.appendChild(chapterCard);
-    });
-
-    // Smooth scroll to the chapter section
-    chapterBox.scrollIntoView({ behavior: 'smooth' });
-}
-
-// Function to view the PDF inline in the body of the page
-function viewPdf(pdfUrl) {
-    const pdfContainer = document.getElementById("pdfContainer");
-
-    // Clear any previous content
-    pdfContainer.innerHTML = '';
-
-    // Create an iframe to embed the PDF
-    const iframe = document.createElement('iframe');
-    iframe.src = pdfUrl;
-    iframe.width = '100%';
-    iframe.height = '600px'; // You can adjust the height
-    iframe.style.border = 'none';
-
-    // Append the iframe to the container
-    pdfContainer.appendChild(iframe);
-
-    // Scroll to the PDF container for a better user experience
-    pdfContainer.scrollIntoView({ behavior: 'smooth' });
-}
-
-// Show contact information
-function showContact() {
-    const contactSection = document.getElementById("contact");
-    contactSection.scrollIntoView({ behavior: 'smooth' });
-}
-
-// Render subject cards dynamically
-window.onload = function () {
-    const subjectsContainer = document.getElementById("subjectsContainer");
-    Object.keys(subjects).forEach(subject => {
-        const subjectCard = document.createElement("div");
-        subjectCard.classList.add("subject-card");
-        subjectCard.innerHTML = `
-            <h3>${subject.charAt(0).toUpperCase() + subject.slice(1)}</h3>
-            <button onclick="showChapters('${subject}')">Show Chapters</button>
-        `;
-        subjectsContainer.appendChild(subjectCard);
-    });
-};
-
-</script>
-
+        window.onload = function () {
+            const subjectsContainer = document.getElementById("subjectsContainer");
+            Object.keys(subjects).forEach(subject => {
+                subjectsContainer.innerHTML += `
+                    <div class="subject-card">
+                        <h3>${subject.charAt(0).toUpperCase() + subject.slice(1)}</h3>
+                        <button onclick="showChapters('${subject}')">Show Chapters</button>
+                    </div>
+                `;
+            });
+        };
+    </script>
 </body>
 </html>
